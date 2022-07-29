@@ -7,12 +7,12 @@ type deck []string
 func newDeck() deck {
 	cards := deck{}
 
-	cards = addCardsToDeck()
+	cards = addCards()
 
 	return cards
 }
 
-func addCardsToDeck() deck {
+func addCards() deck {
 	cardSuits := []string{"Ace", "Diamonds", "Hearts", "Clubs"}
 	cardValues := []string{"One", "Two", "Three", "Four"}
 
@@ -34,4 +34,8 @@ func (d deck) print() {
 
 func deal(d deck, handSize int) (deck, deck) {
 	return d[:handSize], d[handSize:]
+}
+
+func (d deck) toString() string {
+	return ""
 }
