@@ -18,4 +18,7 @@ func main() {
 
 	cardsFile := newDeckFromFile("my_cards")
 	cardsFile.print()
+
+	cardsFile.shuffle()
+	cardsFile.print()
 }
