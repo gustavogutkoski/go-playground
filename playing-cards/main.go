@@ -15,4 +15,7 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
+
+	cardsFile := newDeckFromFile("my_cards")
+	cardsFile.print()
 }
