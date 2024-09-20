@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"math/rand"
 	"os"
 	"strings"
@@ -49,11 +48,11 @@ func (d deck) toString() string {
 
 func (d deck) saveToFile(filename string) error {
 	const DefaultPermissionsForWriteAndRead = 0666
-	return ioutil.WriteFile(filename, []byte(d.toString()), DefaultPermissionsForWriteAndRead)
+	return os.WriteFile(filename, []byte(d.toString()), DefaultPermissionsForWriteAndRead)
 }
 
 func newDeckFromFile(filename string) deck {
-	deckBs, err := ioutil.ReadFile(filename)
+	deckBs, err := os.ReadFile(filename)
 	if err != nil {
 		fmt.Println("Error:", err)
 		os.Exit(1)
