@@ -21,7 +21,7 @@ func main() {
 	args := os.Args
 
 	if len(args) < 2 {
-		fmt.Println("Usage: go run main.go <url>")
+		fmt.Println("Usage: go run request.go <url>")
 		os.Exit(1)
 	}
 
